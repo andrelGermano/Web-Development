@@ -129,16 +129,17 @@ function salvarDadosR() {
 
 function exibirDadosSalvosR() {
     console.log("Tentando exibir dados salvos");
-    
+
     var dadosSalvosR = JSON.parse(localStorage.getItem('usuariosR')) || [];
-    
+
     var dadosSalvosDivR = document.getElementById('dadosSalvosR');
     dadosSalvosDivR.innerHTML = "";
 
     for (var i = 0; i < dadosSalvosR.length; i++) {
         var usuarioR = dadosSalvosR[i];
-        var rebanhoHtml = "<p><strong>Nome: </strong>" + usuarioR.nomeR + " | <strong>Código: </strong>" + usuarioR.codigo + "| <strong>Espécie(s): </strong>" + usuarioR.especies + "  " +
-            "<button class='btn btn-danger btn-sm' onclick='excluirBolsista(" + i + ")'>Excluir</button></p>";
+        var rebanhoHtml =
+            "<p><strong>Nome: </strong>" + usuarioR.nomeR + " | <strong>Código: </strong>" + usuarioR.codigo + "| <strong>Espécie(s): </strong>" + usuarioR.especies + "  " +
+            "<button class='btn btn-danger btn-sm' onclick='excluirRebanho(" + i + ")'>Excluir</button></p>";
 
         dadosSalvosDivR.innerHTML += rebanhoHtml;
     }
